@@ -1,24 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { SmoothScroll } from "@/components/site/SmoothScroll";
+import { Loader } from "@/components/site/Loader";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { WhyChooseUs } from "@/components/site/WhyChooseUs";
+import { Menu } from "@/components/site/Menu";
+import { Signature } from "@/components/site/Signature";
+import { Gallery } from "@/components/site/Gallery";
+import { FamilyDining } from "@/components/site/FamilyDining";
+import { Drinks } from "@/components/site/Drinks";
+import { Reviews } from "@/components/site/Reviews";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { FloatingActions } from "@/components/site/FloatingActions";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Ganesh Dhaba — Authentic Family Dining, Fast Food & Beverages" },
+      {
+        name: "description",
+        content:
+          "Ganesh Dhaba — an authentic Indian family restaurant serving North Indian, Chinese, South Indian, fast food & fresh beverages. Warm ambience, hygienic kitchen, pocket-friendly.",
+      },
+      { property: "og:title", content: "Ganesh Dhaba — Authentic Family Dhaba" },
+      {
+        property: "og:description",
+        content: "Warm, hygienic and affordable family dhaba. Explore our menu and visit us today.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SmoothScroll />
+      <Loader />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <WhyChooseUs />
+        <Menu />
+        <Signature />
+        <Gallery />
+        <FamilyDining />
+        <Drinks />
+        <Reviews />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingActions />
+      <Toaster position="top-center" richColors closeButton />
+    </>
   );
 }
