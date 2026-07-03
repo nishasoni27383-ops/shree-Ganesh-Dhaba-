@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import logoMark from "@/assets/ganesh-logo.png.asset.json";
+import wordmark from "@/assets/ganesh-wordmark.png.asset.json";
 
 export function Loader() {
   const [visible, setVisible] = useState(true);
@@ -17,22 +19,22 @@ export function Loader() {
           className="fixed inset-0 z-[100] grid place-items-center bg-background"
         >
           <div className="text-center">
-            <motion.div
+            <motion.img
+              src={logoMark.url}
+              alt="Ganesh Dhaba"
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-primary text-primary-foreground shadow-elegant"
-            >
-              <span className="font-display text-3xl font-bold">ॐ</span>
-            </motion.div>
-            <motion.p
+              className="mx-auto h-24 w-24 object-contain"
+            />
+            <motion.img
+              src={wordmark.url}
+              alt="Ganesh Dhaba"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-6 font-display text-2xl font-bold tracking-wide"
-            >
-              GANESH <span className="text-primary">DHABA</span>
-            </motion.p>
+              className="mx-auto mt-4 h-10 w-auto object-contain"
+            />
             <div className="mx-auto mt-4 h-1 w-40 overflow-hidden rounded-full bg-secondary">
               <div className="shimmer h-full w-full" />
             </div>
