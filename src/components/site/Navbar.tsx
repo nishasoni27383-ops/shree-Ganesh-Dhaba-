@@ -57,12 +57,12 @@ export function Navbar() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div
-            className={`glass flex items-center justify-between gap-4 rounded-full px-4 py-2.5 shadow-soft transition-all ${
+            <div
+            className={`glass flex items-center justify-between gap-4 rounded-full px-4 py-1.5 shadow-soft transition-all ${
               scrolled ? "border-primary/10" : ""
             }`}
           >
-            <Logo hideWordmark logoClassName="h-[60px] w-[60px]" />
+            <Logo hideWordmark logoClassName="h-[70px] w-[70px]" />
             <nav className="hidden items-center gap-1 lg:flex">
               {NAV.map((n) => (
                 <a
