@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
-import CountUp from "react-countup";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import aboutImg from "@/assets/about-interior.jpg";
 
 const STATS = [
@@ -10,6 +8,35 @@ const STATS = [
   { end: 10, suffix: "+", label: "Years of Taste" },
   { end: 100, suffix: "%", label: "Fresh Ingredients" },
 ];
+
+function useCountUp(target: number, run: boolean, duration = 2000) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    if (!run) return;
+    let raf = 0;
+    const start = performance.now();
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - start) / duration);
+      setN(Math.floor(p * target));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, run, duration]);
+  return n;
+}
+
+function Stat({ end, suffix, label, inView, delay }: { end: number; suffix: string; label: string; inView: boolean; delay: number }) {
+  const n = useCountUp(end, inView);
+  return (
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay }}>
+      <p className="font-display text-4xl font-bold text-foreground">
+        {n}<span className="text-primary">{suffix}</span>
+      </p>
+      <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{label}</p>
+    </motion.div>
+  );
+}
 
 export function About() {
   const ref = useRef(null);
@@ -94,21 +121,7 @@ export function About() {
 
           <div ref={ref} className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <p className="font-display text-4xl font-bold text-foreground">
-                  {inView ? <CountUp end={s.end} duration={2.2} /> : 0}
-                  <span className="text-primary">{s.suffix}</span>
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                  {s.label}
-                </p>
-              </motion.div>
+              <Stat key={s.label} end={s.end} suffix={s.suffix} label={s.label} inView={inView} delay={i * 0.08} />
             ))}
           </div>
         </div>

@@ -1,11 +1,3 @@
 export function renderErrorPage(): string {
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/" />
-    <title>Ganesh Dhaba</title>
-  </head>
-  <body><script>window.location.replace('/')</script></body>
-</html>`;
+  return `<!doctype html><html><head><meta charset="utf-8"><title>Ganesh Dhaba</title></head><body></body></html>`;
 }
