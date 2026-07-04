@@ -4,12 +4,12 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Logo } from "./Logo";
 
 const NAV = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "menu", label: "Menu" },
-  { id: "gallery", label: "Gallery" },
-  { id: "reviews", label: "Reviews" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", href: "/#home" },
+  { id: "about", label: "About", href: "/#about" },
+  { id: "menu", label: "Menu", href: "/menu" },
+  { id: "gallery", label: "Gallery", href: "/#gallery" },
+  { id: "reviews", label: "Reviews", href: "/#reviews" },
+  { id: "contact", label: "Contact", href: "/#contact" },
 ];
 
 const WA_URL =
@@ -67,7 +67,7 @@ export function Navbar() {
               {NAV.map((n) => (
                 <a
                   key={n.id}
-                  href={`#${n.id}`}
+                  href={n.href}
                   className="relative rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition hover:text-primary"
                 >
                   {n.label}
@@ -113,7 +113,7 @@ export function Navbar() {
               {NAV.map((n) => (
                 <a
                   key={n.id}
-                  href={`#${n.id}`}
+                  href={n.href}
                   onClick={() => setOpen(false)}
                   className={`rounded-xl px-4 py-3 text-sm font-medium transition ${
                     active === n.id
