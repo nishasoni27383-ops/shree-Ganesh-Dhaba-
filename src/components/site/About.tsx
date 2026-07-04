@@ -121,21 +121,7 @@ export function About() {
 
           <div ref={ref} className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <p className="font-display text-4xl font-bold text-foreground">
-                  {inView ? <CountUp end={s.end} duration={2.2} /> : 0}
-                  <span className="text-primary">{s.suffix}</span>
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                  {s.label}
-                </p>
-              </motion.div>
+              <Stat key={s.label} end={s.end} suffix={s.suffix} label={s.label} inView={inView} delay={i * 0.08} />
             ))}
           </div>
         </div>
