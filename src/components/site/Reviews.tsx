@@ -6,12 +6,12 @@ import { HiStar } from "react-icons/hi";
 import { FaGoogle, FaQuoteLeft } from "react-icons/fa";
 
 const REVIEWS = [
-  { name: "Aarav Sharma", avatar: "https://i.pravatar.cc/120?img=12", text: "Paneer Butter Masala was heavenly! Warm hospitality and spotless place. Feels like home." },
-  { name: "Priya Verma", avatar: "https://i.pravatar.cc/120?img=45", text: "Best family dhaba in the area. My kids love the pav bhaji and mango lassi. Truly authentic." },
-  { name: "Rohit Menon", avatar: "https://i.pravatar.cc/120?img=32", text: "Great value for money. Fast service, clean seating and consistent taste every single visit." },
-  { name: "Sneha Iyer", avatar: "https://i.pravatar.cc/120?img=47", text: "The masala dosa is a must-try. Fresh, crispy and the chutneys are on another level." },
-  { name: "Karan Patel", avatar: "https://i.pravatar.cc/120?img=15", text: "Dal Tadka reminded me of my grandma's kitchen. Warm ambience, amazing chai to end the meal." },
-  { name: "Meera Kapoor", avatar: "https://i.pravatar.cc/120?img=48", text: "Perfect place for family dinners. Staff is very polite and food quality is top-notch." },
+  { name: "Aashirwad Jaat", avatar: "https://i.pravatar.cc/120?img=12", text: "Best quality food, neat and clean place, staff behaviour good." },
+  { name: "Ramswaroop Mishra", avatar: "https://i.pravatar.cc/120?img=15", text: "Awesome food experience, fastest service." },
+  { name: "Wanderlust", avatar: "https://i.pravatar.cc/120?img=32", text: "The portion size was enough to serve two people, and it was very flavourful." },
+  { name: "Rahul Suthar", avatar: "https://i.pravatar.cc/120?img=52", text: "Authentic Rajasthani taste — Dal Bati Churma was absolutely delicious. Highly recommended in Bikaner." },
+  { name: "Pooja Rathore", avatar: "https://i.pravatar.cc/120?img=45", text: "Perfect stop on the highway. Hot rotis, fresh sabzi and warm hospitality. Feels like home food." },
+  { name: "Manish Vyas", avatar: "https://i.pravatar.cc/120?img=68", text: "Value for money, generous portions and a very family-friendly atmosphere. Will visit again." },
 ];
 
 export function Reviews() {
