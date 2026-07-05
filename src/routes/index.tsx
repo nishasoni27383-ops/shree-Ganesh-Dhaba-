@@ -8,7 +8,7 @@ import { About } from "@/components/site/About";
 import { WhyChooseUs } from "@/components/site/WhyChooseUs";
 import { Menu } from "@/components/site/Menu";
 import { Signature } from "@/components/site/Signature";
-import { Gallery } from "@/components/site/Gallery";
+
 import { FamilyDining } from "@/components/site/FamilyDining";
 import { Drinks } from "@/components/site/Drinks";
 import { Reviews } from "@/components/site/Reviews";
@@ -49,7 +49,6 @@ function Index() {
         <WhyChooseUs />
         <Menu />
         <Signature />
-        <Gallery />
         <FamilyDining />
         <Drinks />
         <Reviews />
