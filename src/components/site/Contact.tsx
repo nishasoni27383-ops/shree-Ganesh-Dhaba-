@@ -74,11 +74,20 @@ export function Contact() {
             className="space-y-6"
           >
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <Info icon={<HiLocationMarker size={20} />} title="Address" line="MG Road, Sector 22, Near City Mall, New Delhi 110001" />
-              <Info icon={<HiClock size={20} />} title="Opening Hours" line="Mon – Sun • 10:00 AM – 11:30 PM" />
+              <Info icon={<HiLocationMarker size={20} />} title="Address" line="Infront of Veshnodam Mandir, A-16, Inderprasth, Kundan Vihar, Ridmalsar Purohitan, Bikaner, Rajasthan 334022" />
+              <Info icon={<HiClock size={20} />} title="Opening Hours" line="Mon – Sun • Open till 11:00 PM" />
               <Info icon={<HiPhone size={20} />} title="Phone" line="+91 99999 99999" href="tel:+919999999999" />
               <Info icon={<HiOutlineMail size={20} />} title="Email" line="hello@ganeshdhaba.in" href="mailto:hello@ganeshdhaba.in" />
             </div>
+
+            <div className="flex flex-wrap gap-3">
+              <a href="tel:+919999999999" className="btn-glow inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
+                <HiPhone /> Call Now
+              </a>
+              <a href={WA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white">
+                <FaWhatsapp /> WhatsApp
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Shree+Ganesh+Dhaba+Ridmalsar+Purohitan+Bikaner" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold">
 
             <div className="flex flex-wrap gap-3">
               <a href="tel:+919999999999" className="btn-glow inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
