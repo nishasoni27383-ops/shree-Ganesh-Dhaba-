@@ -88,23 +88,14 @@ export function Contact() {
                 <FaWhatsapp /> WhatsApp
               </a>
               <a href="https://www.google.com/maps/search/?api=1&query=Shree+Ganesh+Dhaba+Ridmalsar+Purohitan+Bikaner" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold">
-
-            <div className="flex flex-wrap gap-3">
-              <a href="tel:+919999999999" className="btn-glow inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
-                <HiPhone /> Call Now
-              </a>
-              <a href={WA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white">
-                <FaWhatsapp /> WhatsApp
-              </a>
-              <a href="https://maps.google.com/?q=MG+Road+Sector+22+New+Delhi" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold">
                 <FaDirections /> Directions
               </a>
             </div>
 
             <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
               <iframe
-                title="Ganesh Dhaba Location"
-                src="https://www.google.com/maps?q=New+Delhi+India&output=embed"
+                title="Shree Ganesh Dhaba Location"
+                src="https://www.google.com/maps?q=Shree+Ganesh+Dhaba+Ridmalsar+Purohitan+Bikaner&output=embed"
                 loading="lazy"
                 className="h-[320px] w-full"
                 referrerPolicy="no-referrer-when-downgrade"
