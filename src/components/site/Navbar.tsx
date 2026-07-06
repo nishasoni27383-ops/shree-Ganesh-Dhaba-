@@ -16,7 +16,7 @@ const NAV = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("");
   const { scrollYProgress } = useScroll();
   const width = useSpring(scrollYProgress, { stiffness: 120, damping: 25 });
 
@@ -54,9 +54,9 @@ export function Navbar() {
           scrolled ? "py-2" : "py-4"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <div
-            className={`glass flex items-center justify-between gap-4 rounded-full px-4 py-1.5 shadow-soft transition-all ${
+        <div className="flex justify-center px-4 sm:px-6">
+          <div
+            className={`glass mx-auto flex w-full max-w-3xl items-center justify-between gap-4 rounded-full px-4 py-1.5 shadow-soft transition-all ${
               scrolled ? "border-primary/10" : ""
             }`}
           >
@@ -66,7 +66,7 @@ export function Navbar() {
                 <a
                   key={n.id}
                   href={n.href}
-                  className="relative rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition hover:text-primary"
+                  className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition hover:text-primary"
                 >
                   {n.label}
                   {active === n.id && (
@@ -79,23 +79,13 @@ export function Navbar() {
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-2">
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-glow hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground md:inline-flex"
-              >
-                Order Now
-              </a>
-              <button
-                aria-label="Toggle menu"
-                onClick={() => setOpen((o) => !o)}
-                className="grid h-10 w-10 place-items-center rounded-full border border-border bg-background/60 text-foreground lg:hidden"
-              >
-                {open ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
-              </button>
-            </div>
+            <button
+              aria-label="Toggle menu"
+              onClick={() => setOpen((o) => !o)}
+              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-background/60 text-foreground lg:hidden"
+            >
+              {open ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
+            </button>
           </div>
         </div>
 
@@ -104,7 +94,7 @@ export function Navbar() {
           initial={false}
           animate={{ opacity: open ? 1 : 0, y: open ? 0 : -8, pointerEvents: open ? "auto" : "none" }}
           transition={{ duration: 0.25 }}
-          className="mx-auto mt-2 max-w-7xl px-4 sm:px-6 lg:hidden"
+          className="mx-auto mt-2 max-w-3xl px-4 sm:px-6 lg:hidden"
         >
           <div className="glass rounded-2xl p-3 shadow-soft">
             <nav className="flex flex-col">
@@ -122,15 +112,6 @@ export function Navbar() {
                   {n.label}
                 </a>
               ))}
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setOpen(false)}
-                className="mt-2 rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
-              >
-                Order on WhatsApp
-              </a>
             </nav>
           </div>
         </motion.div>
