@@ -11,7 +11,7 @@ const PILLS = [
 
 export function FamilyDining() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section id="ambience" className="relative py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">

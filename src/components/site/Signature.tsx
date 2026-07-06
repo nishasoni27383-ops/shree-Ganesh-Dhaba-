@@ -10,7 +10,7 @@ export function Signature() {
   const items = SIGNATURE_IDS.map((id) => MENU.find((m) => m.id === id)!).filter(Boolean);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background py-24 sm:py-32">
+    <section id="chefs-creation" className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">

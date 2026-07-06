@@ -98,19 +98,6 @@ export function Hero() {
           Authentic Family Dining • Fast Food • Refreshing Beverages
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
-        >
-          <a
-            href="#menu"
-            className="btn-glow rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground"
-          >
-            Explore Menu
-          </a>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
