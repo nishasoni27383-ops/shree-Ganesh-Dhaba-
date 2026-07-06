@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { HiArrowDown } from "react-icons/hi";
 import gsap from "gsap";
-import heroImg from "@/assets/hero-dhaba.jpg";
+import thaliBg from "@/assets/thali-bg.jpg.asset.json";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
