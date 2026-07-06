@@ -33,8 +33,8 @@ export function Hero() {
       {/* Background image with slow zoom */}
       <div className="absolute inset-0 -z-20">
         <img
-          src={heroImg}
-          alt="Warm ambience of Ganesh Dhaba at sunset"
+          src={thaliBg.url}
+          alt="Traditional Indian thali spread"
           className="h-full w-full animate-gentle-zoom object-cover"
           width={1920}
           height={1280}
