@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { Loader } from "@/components/site/Loader";
-import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { WhyChooseUs } from "@/components/site/WhyChooseUs";
