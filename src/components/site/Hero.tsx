@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { HiArrowDown } from "react-icons/hi";
 import gsap from "gsap";
 import thaliBg from "@/assets/thali-bg.jpg.asset.json";
+import { Logo } from "./Logo";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
