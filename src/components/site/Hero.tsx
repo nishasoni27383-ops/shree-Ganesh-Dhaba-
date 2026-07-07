@@ -67,15 +67,6 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center text-white">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] uppercase tracking-[0.32em] backdrop-blur"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-          Authentic Indian Dhaba • Est. 2014
-        </motion.p>
 
         <h1
           ref={titleRef}
