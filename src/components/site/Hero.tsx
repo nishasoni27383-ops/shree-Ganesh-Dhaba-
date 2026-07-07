@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { HiArrowDown } from "react-icons/hi";
 import gsap from "gsap";
 import thaliBg from "@/assets/thali-bg.jpg.asset.json";
+import { Logo } from "./Logo";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -30,6 +31,10 @@ export function Hero() {
       id="home"
       className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden"
     >
+      {/* Logo at upper left */}
+      <div className="absolute left-4 top-4 z-30 sm:left-6 sm:top-6">
+        <Logo hideWordmark logoClassName="h-24 w-24 sm:h-32 sm:w-32" />
+      </div>
       {/* Background image with slow zoom */}
       <div className="absolute inset-0 -z-20">
         <img
