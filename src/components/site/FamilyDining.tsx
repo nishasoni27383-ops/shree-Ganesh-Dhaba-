@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Utensils, Users, Sofa, Flame } from "lucide-react";
+import { FaUtensils, FaUsers, FaCouch, FaFire } from "react-icons/fa";
 import aboutImg from "@/assets/about-interior.jpg";
 import ambience1 from "@/assets/ambience1.png";
 
 const PILLS = [
-  { icon: Users, label: "Spacious Family Tables" },
-  { icon: Sofa, label: "Comfortable Booth Seating" },
-  { icon: Flame, label: "Warm Ambient Lighting" },
-  { icon: Utensils, label: "Friendly, Attentive Staff" },
+  { icon: FaUsers, label: "Spacious Family Tables" },
+  { icon: FaCouch, label: "Comfortable Booth Seating" },
+  { icon: FaFire, label: "Warm Ambient Lighting" },
+  { icon: FaUtensils, label: "Friendly, Attentive Staff" },
 ];
 
 export function FamilyDining() {

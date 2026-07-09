@@ -60,7 +60,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-background/75">
               {FOOTER_LINKS.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to as any} hash={l.hash} className="transition hover:text-primary-foreground">
+                  <Link to={l.to as any} {...(l.hash ? { hash: l.hash } : {})} className="transition hover:text-primary-foreground">
                     {l.label}
                   </Link>
                 </li>

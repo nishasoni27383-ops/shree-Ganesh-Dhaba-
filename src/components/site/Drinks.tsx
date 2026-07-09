@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Coffee, CupSoda, Milk, Citrus, Martini, GlassWater, IceCream } from "lucide-react";
+import { FaCoffee, FaMugHot, FaLemon, FaGlassMartini, FaGlassWhiskey, FaIceCream, FaTint } from "react-icons/fa";
 
 const DRINKS = [
-  { icon: GlassWater, name: "Cold Drinks", desc: "Chilled colas, sodas & sparkling", price: "from ₹40" },
-  { icon: Citrus, name: "Fresh Juices", desc: "Hand-pressed daily fruit juices", price: "from ₹90" },
-  { icon: Coffee, name: "Masala Tea", desc: "Slow-brewed cardamom chai", price: "₹40" },
-  { icon: CupSoda, name: "Cold Coffee", desc: "Espresso, milk & ice-cream", price: "₹130" },
-  { icon: IceCream, name: "Milkshakes", desc: "Thick chocolate, vanilla & strawberry", price: "₹120" },
-  { icon: Milk, name: "Lassi", desc: "Sweet, salted or mango lassi", price: "from ₹80" },
-  { icon: Martini, name: "Mocktails", desc: "Refreshing non-alcoholic mixes", price: "from ₹100" },
+  { icon: FaGlassWhiskey, name: "Cold Drinks", desc: "Chilled colas, sodas & sparkling", price: "from ₹40" },
+  { icon: FaLemon, name: "Fresh Juices", desc: "Hand-pressed daily fruit juices", price: "from ₹90" },
+  { icon: FaMugHot, name: "Masala Tea", desc: "Slow-brewed cardamom chai", price: "₹40" },
+  { icon: FaCoffee, name: "Cold Coffee", desc: "Espresso, milk & ice-cream", price: "₹130" },
+  { icon: FaIceCream, name: "Milkshakes", desc: "Thick chocolate, vanilla & strawberry", price: "₹120" },
+  { icon: FaTint, name: "Lassi", desc: "Sweet, salted or mango lassi", price: "from ₹80" },
+  { icon: FaGlassMartini, name: "Mocktails", desc: "Refreshing non-alcoholic mixes", price: "from ₹100" },
 ];
 
 export function Drinks() {

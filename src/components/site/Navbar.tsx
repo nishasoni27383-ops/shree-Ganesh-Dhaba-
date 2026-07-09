@@ -77,7 +77,7 @@ export function Navbar() {
                   <Link
                     key={n.id}
                     to={n.to as any}
-                    hash={n.hash}
+                    {...(n.hash ? { hash: n.hash } : {})}
                     className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition hover:text-primary"
                   >
                     {n.label}
@@ -131,12 +131,12 @@ export function Navbar() {
                 <Link
                   key={n.id}
                   to={n.to as any}
-                  hash={n.hash}
+                  {...(n.hash ? { hash: n.hash } : {})}
                   onClick={() => setOpen(false)}
                   className={`rounded-xl px-4 py-3 text-sm font-medium transition ${
                     active === n.id
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/80 hover:bg-secondary"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground hover:bg-muted"
                   }`}
                 >
                   {n.label}
