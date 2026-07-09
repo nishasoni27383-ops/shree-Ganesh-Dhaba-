@@ -49,7 +49,9 @@ export function FamilyDining() {
           </div>
 
           <a
-            href="#contact"
+            href="https://wa.me/919999999999?text=I%20want%20to%20reserve%20table"
+            target="_blank"
+            rel="noreferrer"
             className="btn-glow mt-8 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
           >
             Reserve a Table
