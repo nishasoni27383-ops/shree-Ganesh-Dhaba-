@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { FaUtensils, FaUsers, FaCouch, FaFire } from "react-icons/fa";
-import aboutImg from "@/assets/about-interior.jpg";
-import ambience1 from "@/assets/ambience1.png";
+import ambience1 from "@/assets/ambience 1.jpeg";
+import ambience2 from "@/assets/ambience2.jpeg";
+import ambience3 from "@/assets/ambience3.jpeg";
+import ambience4 from "@/assets/ambience 4.jpeg";
 
 const PILLS = [
   { icon: FaUsers, label: "Spacious Family Tables" },
@@ -72,7 +74,7 @@ export function FamilyDining() {
               className="overflow-hidden rounded-[2rem] shadow-elegant"
             >
               <img
-                src={aboutImg}
+                src={ambience1}
                 alt="Warm family dining space"
                 loading="lazy"
                 className="h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -83,14 +85,10 @@ export function FamilyDining() {
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
               className="overflow-hidden rounded-[2rem] shadow-elegant"
             >
-              {/* Using a reliable public HTTPS video with a poster to prevent empty space */}
-              <video
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
-                poster={aboutImg}
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src={ambience2}
+                alt="Dining tables"
+                loading="lazy"
                 className="h-[250px] w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </motion.div>
@@ -103,16 +101,24 @@ export function FamilyDining() {
               className="overflow-hidden rounded-[2rem] shadow-elegant"
             >
               <img
-                src={ambience1}
+                src={ambience3}
                 alt="Cozy interior details"
                 loading="lazy"
-                className="h-[400px] w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="h-[250px] w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </motion.div>
-            <div className="rounded-3xl border border-border bg-background p-6 shadow-soft text-center flex flex-col justify-center h-[150px]">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground">Seating capacity</p>
-              <p className="mt-1 font-display text-3xl font-bold text-primary">80+ Guests</p>
-            </div>
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 5.2, ease: "easeInOut", delay: 0.2 }}
+              className="overflow-hidden rounded-[2rem] shadow-elegant"
+            >
+              <img
+                src={ambience4}
+                alt="More dining space"
+                loading="lazy"
+                className="h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </motion.div>
           </div>
         </motion.div>
       </div>

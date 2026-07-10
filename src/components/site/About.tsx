@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import aboutImg from "@/assets/dhaba-front.jpg";
+import aboutImg from "@/assets/ganesh dhaba.jpeg";
 
 const STATS = [
   { end: 20, suffix: "+", label: "Signature Dishes" },
