@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import aboutImg from "@/assets/about-interior.jpg";
+import aboutImg from "@/assets/dhaba-front.jpg";
 
 const STATS = [
   { end: 20, suffix: "+", label: "Signature Dishes" },
@@ -55,7 +55,7 @@ export function About() {
           <div className="relative overflow-hidden rounded-[2rem] shadow-elegant">
             <img
               src={aboutImg}
-              alt="Cozy interior of Ganesh Dhaba"
+              alt="Storefront of Ganesh Dhaba"
               loading="lazy"
               width={1280}
               height={1280}
