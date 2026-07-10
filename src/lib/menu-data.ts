@@ -28,8 +28,8 @@ export const CATEGORIES = [
   "Desserts",
   "Cold Drinks",
   "Fresh Juice",
-  "Tea",
-  "Coffee",
+  "Tea & Coffee",
+  "Shakes",
   "Lassi",
   "Mocktails",
 ] as const;
@@ -89,6 +89,30 @@ export const MENU: MenuItem[] = [
   { id: "kb", name: "Kadai Paneer", category: "North Indian", price: 250, veg: true, rating: 4.8,
     desc: "Paneer & peppers roasted in a smoky kadai masala.",
     image: img("photo-1585937421612-70a008356fbe") },
+
+  // Tea & Coffee
+  { id: "cappuccino", name: "Cappuccino", category: "Tea & Coffee", price: 120, veg: true, rating: 4.8, desc: "Classic espresso with steamed milk foam.", image: img("photo-1572442388796-11668a67e53d") },
+  { id: "coffee-hazelnut", name: "Coffee Hazelnut", category: "Tea & Coffee", price: 180, veg: true, rating: 4.9, desc: "Rich coffee blended with roasted hazelnut syrup.", image: img("photo-1557006021-b85faa2bc5e2") },
+  { id: "tea-regular", name: "Tea", category: "Tea & Coffee", price: 40, veg: true, rating: 4.5, desc: "Classic refreshing Indian tea.", image: img("photo-1544787219-7f47ccb76574") },
+  { id: "kesar-tea", name: "Kesar Tea", category: "Tea & Coffee", price: 60, veg: true, rating: 4.7, desc: "Aromatic tea infused with saffron strands.", image: img("photo-1576092768241-dec231879fc3") },
+  { id: "masala-kesar-tea", name: "Masala Kesar Tea", category: "Tea & Coffee", price: 80, veg: true, rating: 4.9, desc: "Spiced saffron tea for a royal experience.", image: img("photo-1561336313-0bd5e0b27ec8") },
+
+  // Shakes
+  { id: "chocolate-shake", name: "Chocolate Shake", category: "Shakes", price: 180, veg: true, rating: 4.8, desc: "Thick creamy chocolate goodness.", image: img("photo-1572490122747-3968b75cc699") },
+  { id: "butter-scotch-shake", name: "Butter Scotch Shake", category: "Shakes", price: 160, veg: true, rating: 4.7, desc: "Crunchy and sweet butter scotch blend.", image: img("photo-1579954115545-a95591f28bfc") },
+  { id: "oreo-shake", name: "Oreo Shake", category: "Shakes", price: 170, veg: true, rating: 4.9, desc: "Crushed Oreos blended with vanilla ice cream.", image: img("photo-1553177595-4de2bb0842b9") },
+  { id: "blueberry-shake", name: "Blueberry Shake", category: "Shakes", price: 190, veg: true, rating: 4.8, desc: "Sweet and tangy blueberry milk blend.", image: img("photo-1626074964464-924b48ec4259") },
+  { id: "vanilla-shake", name: "Vanilla Shake", category: "Shakes", price: 160, veg: true, rating: 4.6, desc: "Classic smooth vanilla bean shake.", image: img("photo-1572490122747-3968b75cc699") },
+  { id: "strawberry-shake", name: "Strawberry Shake", category: "Shakes", price: 190, veg: true, rating: 4.7, desc: "Fresh strawberries blended to perfection.", image: img("photo-1579954115545-a95591f28bfc") },
+  { id: "mango-pie", name: "Mango Pie Shake", category: "Shakes", price: 170, veg: true, rating: 4.8, desc: "Tropical mango delight in a glass.", image: img("photo-1553177595-4de2bb0842b9") },
+  { id: "kitkat-shake", name: "Kitkat Shake", category: "Shakes", price: 180, veg: true, rating: 4.9, desc: "Crunchy chocolate wafer blended shake.", image: img("photo-1626074964464-924b48ec4259") },
+
+  // Mocktails
+  { id: "virgin-mojito", name: "Virgin Mojito", category: "Mocktails", price: 180, veg: true, rating: 4.7, desc: "Classic mint and lime cooler.", image: img("photo-1513558161293-cdaf765ed2fd") },
+  { id: "blueberry-mojito", name: "Blueberry Mojito", category: "Mocktails", price: 190, veg: true, rating: 4.8, desc: "Minty mocktail bursting with blueberry flavor.", image: img("photo-1556679343-c7306c1976bc") },
+  { id: "cranberry-mojito", name: "Cranberry Mojito", category: "Mocktails", price: 170, veg: true, rating: 4.7, desc: "Tart and refreshing cranberry twist.", image: img("photo-1513558161293-cdaf765ed2fd") },
+  { id: "strawberry-mojito", name: "Strawberry Mojito", category: "Mocktails", price: 170, veg: true, rating: 4.8, desc: "Sweet strawberry and mint fusion.", image: img("photo-1556679343-c7306c1976bc") },
+  { id: "raspberry-lime-mojito", name: "Raspberry Lime Mojito", category: "Mocktails", price: 180, veg: true, rating: 4.9, desc: "Zesty raspberry lime combination.", image: img("photo-1513558161293-cdaf765ed2fd") },
 
 ];
 

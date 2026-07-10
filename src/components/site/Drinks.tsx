@@ -1,19 +1,40 @@
-import { motion } from "framer-motion";
-import { FaCoffee, FaMugHot, FaLemon, FaGlassMartini, FaGlassWhiskey, FaIceCream, FaTint } from "react-icons/fa";
+import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiOutlineHeart, HiHeart } from "react-icons/hi";
+import { FaLeaf } from "react-icons/fa";
+import { MENU, type MenuItem } from "@/lib/menu-data";
+import { toast } from "sonner";
+import { useCart } from "@/hooks/use-cart";
 
-const DRINKS = [
-  { icon: FaGlassWhiskey, name: "Cold Drinks", desc: "Chilled colas, sodas & sparkling", price: "from ₹40" },
-  { icon: FaLemon, name: "Fresh Juices", desc: "Hand-pressed daily fruit juices", price: "from ₹90" },
-  { icon: FaMugHot, name: "Masala Tea", desc: "Slow-brewed cardamom chai", price: "₹40" },
-  { icon: FaCoffee, name: "Cold Coffee", desc: "Espresso, milk & ice-cream", price: "₹130" },
-  { icon: FaIceCream, name: "Milkshakes", desc: "Thick chocolate, vanilla & strawberry", price: "₹120" },
-  { icon: FaTint, name: "Lassi", desc: "Sweet, salted or mango lassi", price: "from ₹80" },
-  { icon: FaGlassMartini, name: "Mocktails", desc: "Refreshing non-alcoholic mixes", price: "from ₹100" },
-];
+const DRINK_CATEGORIES = ["All", "Tea & Coffee", "Shakes", "Mocktails", "Lassi", "Cold Drinks", "Fresh Juice"];
 
 export function Drinks() {
+  const [cat, setCat] = useState<string>("All");
+  const [favs, setFavs] = useState<Record<string, boolean>>({});
+  const { addToCart, setCartOpen } = useCart();
+
+  const items = useMemo(() => {
+    return MENU.filter((m) => {
+      const isDrink = DRINK_CATEGORIES.includes(m.category);
+      if (!isDrink) return false;
+      if (cat === "All") return true;
+      return m.category === cat;
+    });
+  }, [cat]);
+
+  const handleAddToCart = (m: MenuItem) => {
+    addToCart(m);
+    toast.success(`${m.name} added to cart`, {
+      description: `₹${m.price} • View list in cart`,
+      action: {
+        label: "View Cart",
+        onClick: () => setCartOpen(true),
+      },
+    });
+  };
+
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32">
+    <section id="beverages" className="relative overflow-hidden py-24 sm:py-32">
       {/* floating ice bubbles */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         {Array.from({ length: 14 }).map((_, i) => (
@@ -35,30 +56,83 @@ export function Drinks() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {DRINKS.map((d, i) => {
-            const Icon = d.icon;
-            return (
-              <motion.div
-                key={d.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                whileHover={{ y: -6 }}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition hover:shadow-elegant"
+        {/* Categories */}
+        <div className="scrollbar-hide mt-10 flex gap-2 overflow-x-auto pb-2">
+          <div className="mx-auto flex flex-nowrap gap-2">
+            {DRINK_CATEGORIES.map((c) => (
+              <button
+                key={c}
+                onClick={() => setCat(c)}
+                className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  cat === c
+                    ? "border-primary bg-primary text-primary-foreground shadow-elegant"
+                    : "border-border bg-card text-foreground/70 hover:border-primary/40 hover:text-primary"
+                }`}
               >
-                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/20" />
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Icon size={30} />
-                </div>
-                <h3 className="mt-5 font-display text-lg font-bold">{d.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{d.desc}</p>
-                <p className="mt-4 text-sm font-semibold text-primary">{d.price}</p>
-              </motion.div>
-            );
-          })}
+                {c}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Grid */}
+        <motion.div layout className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <AnimatePresence mode="popLayout">
+            {items.map((m) => (
+              <motion.article
+                key={m.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.35 }}
+                whileHover={{ y: -6 }}
+                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition hover:shadow-elegant"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition group-hover:opacity-100" />
+                  <button
+                    onClick={() => setFavs((f) => ({ ...f, [m.id]: !f[m.id] }))}
+                    aria-label="Favorite"
+                    className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-primary shadow-soft backdrop-blur transition hover:scale-110"
+                  >
+                    {favs[m.id] ? <HiHeart size={18} /> : <HiOutlineHeart size={18} />}
+                  </button>
+                  {m.veg && (
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-md border border-emerald-600/30 bg-white/95 px-2 py-1 text-[10px] font-semibold text-emerald-700 backdrop-blur">
+                      <span className="grid h-3.5 w-3.5 place-items-center rounded-sm border border-emerald-600">
+                        <FaLeaf size={7} />
+                      </span>
+                      VEG
+                    </span>
+                  )}
+                </div>
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-display text-lg font-semibold leading-tight">{m.name}</h3>
+                    <span className="shrink-0 font-display text-lg font-bold text-primary">₹{m.price}</span>
+                  </div>
+                  <p className="mt-1.5 line-clamp-2 text-sm text-muted-foreground">{m.desc}</p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">★ {m.rating}</span>
+                    <button
+                      onClick={() => handleAddToCart(m)}
+                      className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition hover:brightness-110"
+                    >
+                      Order Now
+                    </button>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
