@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import aboutImg from "@/assets/ganesh dhaba.jpeg";
 
 const STATS = [
-  { end: 20, suffix: "+", label: "Signature Dishes" },
+  { end: 20, suffix: "+", label: "Our Best Sold" },
   { end: 1000, suffix: "+", label: "Happy Customers" },
   { end: 10, suffix: "+", label: "Years of Taste" },
   { end: 100, suffix: "%", label: "Fresh Ingredients" },
