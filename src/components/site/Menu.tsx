@@ -9,7 +9,7 @@ const CATEGORIES = [
     id: "starter",
     name: "Starter",
     desc: "Tandoori, Chinese, Pasta & more",
-    image: img("photo-1626777553635-e7c3a76debb2"),
+    image: img("photo-1601050690597-df0568f70950"),
   },
   {
     id: "main-course",
