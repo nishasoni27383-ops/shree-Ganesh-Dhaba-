@@ -12,12 +12,12 @@ import { Logo } from "./Logo";
 import { useCart } from "@/hooks/use-cart";
 
 const SLIDES = [
-  { src: ganeshDhaba, alt: "Shree Ganesh Dhaba" },
-  { src: heroDhaba, alt: "Dhaba Ambience" },
-  { src: ambience1, alt: "Dhaba Interior" },
-  { src: ambience2, alt: "Dhaba Seating" },
   { src: ambience3, alt: "Dhaba Evening View" },
   { src: ambience4, alt: "Dhaba Night View" },
+  { src: ambience1, alt: "Dhaba Interior" },
+  { src: ambience2, alt: "Dhaba Seating" },
+  { src: ganeshDhaba, alt: "Shree Ganesh Dhaba" },
+  { src: heroDhaba, alt: "Dhaba Ambience" },
 ];
 
 
