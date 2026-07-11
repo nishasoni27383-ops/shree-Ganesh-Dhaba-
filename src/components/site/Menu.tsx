@@ -13,8 +13,12 @@ export function Menu() {
 
   const items = useMemo(() => {
     const ql = q.trim().toLowerCase();
-    return MENU.filter((m) => (cat === "All" ? true : m.category === cat))
-      .filter((m) => (ql ? m.name.toLowerCase().includes(ql) || m.desc.toLowerCase().includes(ql) : true));
+    const excludedCategories = ["Tea & Coffee", "Shakes", "Mocktails"];
+    
+    return MENU.filter((m) => {
+      if (excludedCategories.includes(m.category)) return false;
+      return cat === "All" ? true : m.category === cat;
+    }).filter((m) => (ql ? m.name.toLowerCase().includes(ql) || m.desc.toLowerCase().includes(ql) : true));
   }, [q, cat]);
 
   const { addToCart, setCartOpen } = useCart();
