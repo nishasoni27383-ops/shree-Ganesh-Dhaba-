@@ -99,7 +99,15 @@ export const MENU: MenuItem[] = [
   { id: "cranberry-mojito", name: "Cranberry Mojito", category: "Mocktails", price: 170, veg: true, rating: 4.7, desc: "Tart and refreshing cranberry twist.", image: img("photo-1513558161293-cdaf765ed2fd") },
   { id: "strawberry-mojito", name: "Strawberry Mojito", category: "Mocktails", price: 170, veg: true, rating: 4.8, desc: "Sweet strawberry and mint fusion.", image: img("photo-1556679343-c7306c1976bc") },
   { id: "raspberry-lime-mojito", name: "Raspberry Lime Mojito", category: "Mocktails", price: 180, veg: true, rating: 4.9, desc: "Zesty raspberry lime combination.", image: img("photo-1513558161293-cdaf765ed2fd") },
-
+  // Rajasthani Special
+  { id: "besan-gatta", name: "Besan Gatta", category: "Main Course", price: 170, veg: true, rating: 4.8, desc: "Authentic Rajasthani gram flour dumplings in spiced gravy.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "malai-gatta", name: "Malai Gatta", category: "Main Course", price: 220, veg: true, rating: 4.9, desc: "Rich and creamy version of traditional gatta curry.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "gatta-paneer", name: "Gatta Paneer", category: "Main Course", price: 240, veg: true, rating: 4.7, desc: "Delicious fusion of paneer cubes and besan gatta.", image: img("photo-1631452180519-c014fe946bc7") },
+  { id: "kair-sangri", name: "Kair Sangri", category: "Main Course", price: 300, veg: true, rating: 4.9, desc: "Classic desert bean and berry delicacy from Rajasthan.", image: img("photo-1589302168068-964664d93dc0") },
+  { id: "dal-baati-churma", name: "Dal Baati Churma", category: "Main Course", price: 330, veg: true, rating: 5.0, desc: "The quintessential Rajasthani meal with baked baatis, dal, and sweet churma.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "sev-tamatar", name: "Sev Tamatar", category: "Main Course", price: 170, veg: true, rating: 4.6, desc: "Spicy tomato curry topped with crispy besan sev.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "shahi-gatta", name: "Shahi Gatta", category: "Main Course", price: 220, veg: true, rating: 4.8, desc: "Royal preparation of gatta stuffed with dry fruits.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "sev-tamatar-dry", name: "Sev Tamatar Dry", category: "Main Course", price: 200, veg: true, rating: 4.7, desc: "Dry, intensely spiced version of the classic sev tamatar.", image: img("photo-1585937421612-70a008356fbe") },
+  { id: "kaju-kair", name: "Kaju Kair", category: "Main Course", price: 300, veg: true, rating: 4.8, desc: "Premium dish featuring cashews and desert berries.", image: img("photo-1589302168068-964664d93dc0") },
 ];
-
-export const SIGNATURE_IDS = ["pbm","dt","vb","hn","cp","md","pb","vbg","cc","fls"];
+export const SIGNATURE_IDS = ["besan-gatta", "malai-gatta", "gatta-paneer", "kair-sangri", "dal-baati-churma", "sev-tamatar", "shahi-gatta", "sev-tamatar-dry", "kaju-kair"];
