@@ -26,9 +26,6 @@ export const CATEGORIES = [
   "Roti",
   "Snacks",
   "Desserts",
-  "Tea & Coffee",
-  "Shakes",
-  "Mocktails",
 ] as const;
 
 export const MENU: MenuItem[] = [
