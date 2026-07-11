@@ -1,8 +1,5 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { Logo } from "./Logo";
-import { useState } from "react";
-import { toast } from "sonner";
-import { z } from "zod";
 import { Link } from "@tanstack/react-router";
 
 const FOOTER_LINKS = [
@@ -15,15 +12,6 @@ const FOOTER_LINKS = [
 ];
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const ok = z.string().email().safeParse(email);
-    if (!ok.success) return toast.error("Please enter a valid email");
-    toast.success("Subscribed!", { description: "Watch your inbox for tasty updates." });
-    setEmail("");
-  };
-
   return (
     <footer className="relative overflow-hidden bg-foreground text-background">
       <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-primary/40 blur-3xl" />
@@ -37,15 +25,6 @@ export function Footer() {
               Authentic Indian dhaba serving North Indian, Chinese, South Indian, fast food
               and refreshing beverages since 2014. A place families call their own.
             </p>
-            <form onSubmit={submit} className="mt-6 flex max-w-md items-center gap-2 rounded-full border border-background/20 bg-background/5 p-1.5 backdrop-blur">
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Get offers in your inbox"
-                className="w-full bg-transparent px-4 py-2 text-sm text-background placeholder:text-background/50 focus:outline-none"
-              />
-              <button className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground">Subscribe</button>
-            </form>
             <div className="mt-6 flex gap-3">
               {[FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube].map((I, i) => (
                 <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-background/20 text-background/80 transition hover:bg-primary hover:text-primary-foreground">
