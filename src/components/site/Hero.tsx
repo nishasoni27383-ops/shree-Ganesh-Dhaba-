@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiArrowDown, HiOutlineShoppingCart } from "react-icons/hi";
 import gsap from "gsap";
+import hero4 from "@/assets/hero 4th.jpeg";
+import hero5 from "@/assets/hero 5th.jpeg";
 import ambience2 from "@/assets/ambience2.jpeg";
 import ambience3 from "@/assets/ambience3.jpeg";
 import ambience4 from "@/assets/ambience 4.jpeg";
@@ -12,8 +14,8 @@ const SLIDES = [
   { src: ambience3, alt: "Dhaba Evening View" },
   { src: ambience4, alt: "Dhaba Night View" },
   { src: ambience2, alt: "Dhaba Seating" },
-  { src: ambience4, alt: "Cozy Seating Area" },
-  { src: ambience2, alt: "Elephant Wall Art" },
+  { src: hero4, alt: "Hero 4th Slide" },
+  { src: hero5, alt: "Hero 5th Slide" },
 ];
 
 
