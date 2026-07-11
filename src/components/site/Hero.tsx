@@ -2,17 +2,22 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiArrowDown, HiOutlineShoppingCart } from "react-icons/hi";
 import gsap from "gsap";
-import thaliBg from "@/assets/thali-bg.jpg";
+import ganeshDhaba from "@/assets/ganesh dhaba.jpeg";
+import heroDhaba from "@/assets/hero-dhaba.jpg";
+import ambience1 from "@/assets/ambience 1.jpeg";
+import ambience2 from "@/assets/ambience2.jpeg";
+import ambience3 from "@/assets/ambience3.jpeg";
+import ambience4 from "@/assets/ambience 4.jpeg";
 import { Logo } from "./Logo";
 import { useCart } from "@/hooks/use-cart";
 
 const SLIDES = [
-  { src: thaliBg, alt: "Traditional Indian thali spread" },
-  { src: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1920&q=80", alt: "Paneer butter masala" },
-  { src: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1920&q=80", alt: "Fragrant veg biryani" },
-  { src: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1920&q=80", alt: "Crispy masala dosa" },
-  { src: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=1920&q=80", alt: "Pav bhaji with butter" },
-  { src: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80", alt: "Golden dal tadka" },
+  { src: ganeshDhaba, alt: "Shree Ganesh Dhaba" },
+  { src: heroDhaba, alt: "Dhaba Ambience" },
+  { src: ambience1, alt: "Dhaba Interior" },
+  { src: ambience2, alt: "Dhaba Seating" },
+  { src: ambience3, alt: "Dhaba Evening View" },
+  { src: ambience4, alt: "Dhaba Night View" },
 ];
 
 
