@@ -11,12 +11,12 @@ export const Route = createFileRoute("/menu")({
       {
         name: "description",
         content:
-          "Explore Ganesh Dhaba's menu: Breakfast, Lunch, Starters, Our Special, Main Course, Rajasthani Thali, Dal Bati Churma and Drinks & Beverages.",
+          "Explore Ganesh Dhaba's menu: Starters and Main Course.",
       },
       { property: "og:title", content: "Menu Categories — Ganesh Dhaba" },
       {
         property: "og:description",
-        content: "Handcrafted Indian favourites across breakfast, thalis, main course and beverages.",
+        content: "Handcrafted Indian favourites.",
       },
     ],
   }),
@@ -27,14 +27,25 @@ const img = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=80`;
 
 const CATEGORIES = [
-  { name: "Breakfast", desc: "Poha, paratha, chole bhature & morning classics.", image: img("photo-1626200419199-391ae4be7a41") },
-  { name: "Lunch", desc: "Wholesome thalis & everyday comfort meals.", image: img("photo-1567337710282-00832b415979") },
-  { name: "Starters", desc: "Crispy tikkas, kebabs & tandoor bites.", image: img("photo-1626777553635-e7c3a76debb2") },
-  { name: "Our Special", desc: "Chef's signature dishes you can't miss.", image: img("photo-1631452180519-c014fe946bc7") },
-  { name: "Main Course", desc: "Rich curries, paneer & dal specialties.", image: img("photo-1585937421612-70a008356fbe") },
-  { name: "Rajasthani Thali", desc: "A royal platter of Rajasthan's finest.", image: img("photo-1567337710282-00832b415979") },
-  { name: "Dal Bati Churma", desc: "The iconic trio — smoky, sweet & soulful.", image: img("photo-1601050690597-df0568f70950") },
-  { name: "Drinks & Beverages", desc: "Lassi, chai, mocktails & fresh juices.", image: img("photo-1571877227200-a0d98ea607e9") },
+  {
+    name: "Starter",
+    desc: "Tandoori, Chinese, Pasta & more",
+    image: img("photo-1626777553635-e7c3a76debb2"),
+    options: [
+      "Tandoori Starter", "Chinese Starter", "Pasta", "Soup", 
+      "Pizza and Bread", "Street Chaat", "Uttapam", "South Indian", 
+      "Sandwich and Fries", "Burger"
+    ]
+  },
+  {
+    name: "Main Course",
+    desc: "Aloo Special, Paneer, Dal & more",
+    image: img("photo-1585937421612-70a008356fbe"),
+    options: [
+      "Aloo Special", "Paneer Special", "Dal", "Main Course", 
+      "Roti and Naan", "Dhai and Raita", "Rice Pulao", "Salad and Papad"
+    ]
+  }
 ];
 
 function MenuPage() {
@@ -57,11 +68,11 @@ function MenuPage() {
               Explore our categories
             </h1>
             <p className="mt-4 text-muted-foreground">
-              From hearty breakfasts to royal Rajasthani thalis — pick your craving.
+              From delicious starters to fulfilling main courses — pick your craving.
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
             {CATEGORIES.map((c, i) => (
               <motion.article
                 key={c.name}
@@ -72,20 +83,34 @@ function MenuPage() {
                 whileHover={{ y: -6 }}
                 className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:shadow-elegant"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[3/4]">
                   <img
                     src={c.image}
                     alt={c.name}
                     loading="lazy"
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <h3 className="font-display text-2xl font-bold">{c.name}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+                  
+                  {/* Default State */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white transition-opacity duration-300 group-hover:opacity-0">
+                    <h3 className="font-display text-3xl font-bold">{c.name}</h3>
                     <p className="mt-2 text-sm text-white/85">{c.desc}</p>
                     <span className="mt-4 inline-flex rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground">
-                      View Dishes
+                      Hover to view options
                     </span>
+                  </div>
+
+                  {/* Hover State */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black/75 backdrop-blur-sm">
+                    <h3 className="font-display text-3xl font-bold text-white mb-6">{c.name} Options</h3>
+                    <ul className="grid grid-cols-2 gap-x-3 gap-y-3 w-full max-w-sm mx-auto">
+                      {c.options.map((opt) => (
+                        <li key={opt} className="text-sm font-medium text-white/90 bg-white/10 rounded-lg py-2 px-3 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer flex items-center justify-center text-center leading-tight min-h-[44px]">
+                          {opt}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </motion.article>
@@ -97,3 +122,4 @@ function MenuPage() {
     </>
   );
 }
+
