@@ -6,7 +6,7 @@ import { MENU, type MenuItem } from "@/lib/menu-data";
 import { toast } from "sonner";
 import { useCart } from "@/hooks/use-cart";
 
-const DRINK_CATEGORIES = ["All", "Tea & Coffee", "Shakes", "Mocktails", "Lassi", "Cold Drinks", "Fresh Juice"];
+const DRINK_CATEGORIES = ["All", "Tea & Coffee", "Shakes", "Mocktails"];
 
 export function Drinks() {
   const [cat, setCat] = useState<string>("All");

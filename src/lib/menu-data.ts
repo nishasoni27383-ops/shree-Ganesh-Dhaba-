@@ -26,11 +26,8 @@ export const CATEGORIES = [
   "Roti",
   "Snacks",
   "Desserts",
-  "Cold Drinks",
-  "Fresh Juice",
   "Tea & Coffee",
   "Shakes",
-  "Lassi",
   "Mocktails",
 ] as const;
 
@@ -65,9 +62,6 @@ export const MENU: MenuItem[] = [
   { id: "fls", name: "Fresh Lime Soda", category: "Mocktails", price: 80, veg: true, rating: 4.6,
     desc: "Zesty lime, mint & soda — sweet, salt or masala.",
     image: img("photo-1556679343-c7306c1976bc") },
-  { id: "ml", name: "Mango Lassi", category: "Lassi", price: 110, veg: true, rating: 4.9,
-    desc: "Alphonso mango whisked with creamy chilled yogurt.",
-    image: img("photo-1571877227200-a0d98ea607e9") },
   { id: "gt", name: "Masala Chai", category: "Tea", price: 40, veg: true, rating: 4.9,
     desc: "Slow-simmered chai with cardamom, ginger & clove.",
     image: img("photo-1544787219-7f47ccb76574") },
@@ -80,12 +74,6 @@ export const MENU: MenuItem[] = [
   { id: "rot", name: "Butter Roti", category: "Roti", price: 25, veg: true, rating: 4.6,
     desc: "Soft tandoor-baked whole wheat roti brushed with ghee.",
     image: butterRotiImg },
-  { id: "cd", name: "Chilled Cola", category: "Cold Drinks", price: 50, veg: true, rating: 4.4,
-    desc: "Ice-cold classic cola to refresh every bite.",
-    image: img("photo-1622483767028-3f66f32aef97") },
-  { id: "oj", name: "Orange Juice", category: "Fresh Juice", price: 90, veg: true, rating: 4.7,
-    desc: "Hand-pressed sun-ripe oranges, nothing else.",
-    image: img("photo-1613478223719-2ab802602423") },
   { id: "kb", name: "Kadai Paneer", category: "North Indian", price: 250, veg: true, rating: 4.8,
     desc: "Paneer & peppers roasted in a smoky kadai masala.",
     image: img("photo-1585937421612-70a008356fbe") },
@@ -94,6 +82,7 @@ export const MENU: MenuItem[] = [
   { id: "cappuccino", name: "Cappuccino", category: "Tea & Coffee", price: 120, veg: true, rating: 4.8, desc: "Classic espresso with steamed milk foam.", image: img("photo-1572442388796-11668a67e53d") },
   { id: "coffee-hazelnut", name: "Coffee Hazelnut", category: "Tea & Coffee", price: 180, veg: true, rating: 4.9, desc: "Rich coffee blended with roasted hazelnut syrup.", image: img("photo-1557006021-b85faa2bc5e2") },
   { id: "tea-regular", name: "Tea", category: "Tea & Coffee", price: 40, veg: true, rating: 4.5, desc: "Classic refreshing Indian tea.", image: img("photo-1544787219-7f47ccb76574") },
+  { id: "masala-tea-60", name: "Masala Tea", category: "Tea & Coffee", price: 60, veg: true, rating: 4.8, desc: "Classic Indian spiced tea boiled with milk.", image: img("photo-1544787219-7f47ccb76574") },
   { id: "kesar-tea", name: "Kesar Tea", category: "Tea & Coffee", price: 60, veg: true, rating: 4.7, desc: "Aromatic tea infused with saffron strands.", image: img("photo-1576092768241-dec231879fc3") },
   { id: "masala-kesar-tea", name: "Masala Kesar Tea", category: "Tea & Coffee", price: 80, veg: true, rating: 4.9, desc: "Spiced saffron tea for a royal experience.", image: img("photo-1561336313-0bd5e0b27ec8") },
 
@@ -116,4 +105,4 @@ export const MENU: MenuItem[] = [
 
 ];
 
-export const SIGNATURE_IDS = ["pbm","dt","vb","hn","cp","md","pb","vbg","cc","fls","ml"];
+export const SIGNATURE_IDS = ["pbm","dt","vb","hn","cp","md","pb","vbg","cc","fls"];

@@ -74,19 +74,21 @@ export function Hero() {
       </div>
 
       {/* Animated background slideshow */}
-      <div className="absolute inset-0 -z-20">
+      <div className="absolute inset-0 -z-20 bg-black">
         <AnimatePresence mode="sync">
           <motion.img
             key={index}
             src={SLIDES[index].src}
             alt={SLIDES[index].alt}
-            initial={{ opacity: 0, scale: 1.15 }}
-            animate={{ opacity: 1, scale: 1.05 }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1.0 }}
             exit={{ opacity: 0, scale: 1.0 }}
-            transition={{ opacity: { duration: 1.4, ease: "easeInOut" }, scale: { duration: 6, ease: "linear" } }}
+            transition={{ opacity: { duration: 1.2, ease: "easeInOut" }, scale: { duration: 6, ease: "linear" } }}
             className="absolute inset-0 h-full w-full object-cover"
+            style={{ willChange: "transform, opacity" }}
             width={1920}
             height={1280}
+            loading="lazy"
           />
         </AnimatePresence>
       </div>
@@ -110,16 +112,16 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
 
       {/* Floating spice particles */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {Array.from({ length: 22 }).map((_, i) => (
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {Array.from({ length: 12 }).map((_, i) => (
           <span
             key={i}
-            className="absolute block h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]/70 blur-[1px] animate-float-up"
+            className="absolute block h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]/50 animate-float-up"
             style={{
-              left: `${(i * 4.7) % 100}%`,
-              bottom: `-${Math.random() * 40}px`,
-              animationDelay: `${(i % 8) * 0.6}s`,
-              animationDuration: `${6 + (i % 5)}s`,
+              left: `${(i * 8.5) % 100}%`,
+              bottom: `-20px`,
+              animationDelay: `${(i % 5) * 0.8}s`,
+              animationDuration: `${7 + (i % 4)}s`,
             }}
           />
         ))}
