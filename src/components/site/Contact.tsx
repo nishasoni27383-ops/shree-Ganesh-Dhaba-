@@ -3,7 +3,7 @@ import { HiPhone, HiOutlineMail, HiLocationMarker, HiClock } from "react-icons/h
 import { FaWhatsapp, FaDirections } from "react-icons/fa";
 
 const WA_URL =
-  "https://wa.me/919999999999?text=Hi%20Ganesh%20Dhaba%2C%20I'd%20like%20to%20place%20an%20order.";
+  "https://wa.me/918949993211?text=Hi%20Ganesh%20Dhaba%2C%20I'd%20like%20to%20place%20an%20order.";
 
 export function Contact() {
   return (
@@ -28,13 +28,16 @@ export function Contact() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Info icon={<HiLocationMarker size={20} />} title="Address" line="Infront of Veshnodam Mandir, A-16, Inderprasth, Kundan Vihar, Ridmalsar Purohitan, Bikaner, Rajasthan 334022" />
               <Info icon={<HiClock size={20} />} title="Opening Hours" line="Mon – Sun • Open till 11:00 PM" />
-              <Info icon={<HiPhone size={20} />} title="Phone" line="+91 99999 99999" href="tel:+919999999999" />
+              <Info icon={<HiPhone size={20} />} title="Phone" line="+91 89499 93211, +91 94606 15681" href="tel:+918949993211" />
               <Info icon={<HiOutlineMail size={20} />} title="Email" line="hello@ganeshdhaba.in" href="mailto:hello@ganeshdhaba.in" />
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <a href="tel:+919999999999" className="btn-glow inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
+              <a href="tel:+918949993211" className="btn-glow inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
                 <HiPhone /> Call Now
+              </a>
+              <a href="tel:+919460615681" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold">
+                <HiPhone /> Alt. Phone
               </a>
               <a href={WA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white">
                 <FaWhatsapp /> WhatsApp

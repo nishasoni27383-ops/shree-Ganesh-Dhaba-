@@ -98,7 +98,7 @@ export function About() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-base leading-relaxed text-muted-foreground"
           >
-            For over a decade, <b className="text-foreground">Ganesh Dhaba</b> has served
+            With over <span className="font-bold text-primary">60 years of experience</span>, <b className="text-foreground">Ganesh Dhaba</b> has served
             heart-warming North Indian thalis, sizzling Indo-Chinese, crisp South Indian
             classics and refreshing beverages — all made with love, spice-forward recipes
             and 100% fresh ingredients. Come for the food, stay for the ambience.

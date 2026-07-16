@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi";
 
 const WA_URL =
-  "https://wa.me/919999999999?text=Hi%20Ganesh%20Dhaba%2C%20I'd%20like%20to%20place%20an%20order.";
+  "https://wa.me/918949993211?text=Hi%20Ganesh%20Dhaba%2C%20I'd%20like%20to%20place%20an%20order.";
 
 export function FloatingActions() {
   const [show, setShow] = useState(false);

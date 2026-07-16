@@ -6,7 +6,7 @@ import ambience3 from "@/assets/ambience3.jpeg";
 import ambience4 from "@/assets/ambience 4.jpeg";
 
 const PILLS = [
-  { icon: FaUsers, label: "Spacious Family Tables" },
+  { icon: FaUsers, label: "125 Person Sitting Capacity" },
   { icon: FaCouch, label: "Comfortable Booth Seating" },
   { icon: FaFire, label: "Warm Ambient Lighting" },
   { icon: FaUtensils, label: "Friendly, Attentive Staff" },
@@ -51,7 +51,7 @@ export function FamilyDining() {
           </div>
 
           <a
-            href="https://wa.me/919999999999?text=I%20want%20to%20reserve%20table"
+            href="https://wa.me/918949993211?text=I%20want%20to%20reserve%20table"
             target="_blank"
             rel="noreferrer"
             className="btn-glow mt-8 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"

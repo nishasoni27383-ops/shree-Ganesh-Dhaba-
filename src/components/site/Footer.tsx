@@ -26,9 +26,14 @@ export function Footer() {
               and refreshing beverages since 2014. A place families call their own.
             </p>
             <div className="mt-6 flex gap-3">
-              {[FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube].map((I, i) => (
-                <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-background/20 text-background/80 transition hover:bg-primary hover:text-primary-foreground">
-                  <I size={15} />
+              {[
+                { Icon: FaFacebookF, href: "#" },
+                { Icon: FaInstagram, href: "https://www.instagram.com/shreeganeshdhaba?igsh=ZGF6ZGJjcHI2dGx1" },
+                { Icon: FaWhatsapp, href: "https://wa.me/918949993211?text=Hi%20Ganesh%20Dhaba" },
+                { Icon: FaYoutube, href: "#" },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noreferrer" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-background/20 text-background/80 transition hover:bg-primary hover:text-primary-foreground">
+                  <Icon size={15} />
                 </a>
               ))}
             </div>
