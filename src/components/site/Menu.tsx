@@ -64,7 +64,7 @@ export function Menu() {
                     <h3 className="font-display text-3xl font-bold">{c.name}</h3>
                     <p className="mt-2 text-sm text-white/85">{c.desc}</p>
                     <span className="mt-4 inline-flex self-start rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-transform group-hover:scale-105">
-                      View Categories
+                      Order Now
                     </span>
                   </div>
                 </div>

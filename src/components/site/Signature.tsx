@@ -3,11 +3,25 @@ import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
-import { MENU, SIGNATURE_IDS } from "@/lib/menu-data";
+import { MENU, SIGNATURE_IDS, type MenuItem } from "@/lib/menu-data";
+import { toast } from "sonner";
+import { useCart } from "@/hooks/use-cart";
 import { HiStar } from "react-icons/hi";
 
 export function Signature() {
+  const { addToCart, setCartOpen } = useCart();
   const items = SIGNATURE_IDS.map((id) => MENU.find((m) => m.id === id)!).filter(Boolean);
+
+  const handleAddToCart = (m: MenuItem) => {
+    addToCart(m);
+    toast.success(`${m.name} added to cart`, {
+      description: `₹${m.price} • View list in cart`,
+      action: {
+        label: "View Cart",
+        onClick: () => setCartOpen(true),
+      },
+    });
+  };
 
   return (
     <section id="chefs-creation" className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background py-24 sm:py-32">
@@ -47,12 +61,12 @@ export function Signature() {
                       <p className="mt-1 line-clamp-2 text-sm text-white/85">{m.desc}</p>
                       <div className="mt-4 flex items-center justify-between">
                         <span className="font-display text-xl font-bold text-[var(--color-gold)]">₹{m.price}</span>
-                        <a
-                          href="#menu"
-                          className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground"
+                        <button
+                          onClick={() => handleAddToCart(m)}
+                          className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition hover:brightness-110"
                         >
                           Order Now
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
