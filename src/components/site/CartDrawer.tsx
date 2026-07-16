@@ -194,7 +194,7 @@ export function CartDrawer() {
             {cartItems.length > 0 && (
               <div className="border-t border-border bg-card px-6 py-6 space-y-4 shadow-[0_-10px_30px_rgba(0,0,0,0.04)]">
                 <p className="text-center text-sm font-bold text-destructive uppercase tracking-tight">
-                  no home delivry ,pick your parcel by youself
+                  no home delivery, pick your parcel by yourself
                 </p>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm text-muted-foreground">
